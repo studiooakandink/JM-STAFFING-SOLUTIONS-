@@ -1,0 +1,745 @@
+
+/* =========================
+   1. GENERAL SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #253247;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, serif;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   2. BRAND COLOURS
+========================= */
+
+:root {
+    --navy: #061f3a;
+    --gold: #c9a43b;
+    --white: #ffffff;
+    --light: #f4f6f8;
+    --text: #253247;
+}
+
+
+/* =========================
+   3. HEADER AND NAVIGATION
+========================= */
+
+.header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 18px 6%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+}
+
+
+/* =========================
+   4. HERO SECTION
+========================= */
+
+.hero {
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 22, 42, 0.95),
+            rgba(3, 22, 42, 0.55)
+        ),
+        url("../assets/images/hero-cape-town.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero-label,
+.section-label {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 68px);
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero-content > p:not(.hero-label) {
+    max-width: 540px;
+    font-size: 17px;
+    color: #e4e8ed;
+    margin-bottom: 32px;
+}
+
+
+/* =========================
+   5. BUTTONS
+========================= */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 25px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.button-gold {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+.button-gold:hover {
+    background: #e0bd58;
+}
+
+.button-outline {
+    border: 1px solid white;
+    color: white;
+}
+
+.button-outline:hover {
+    background: white;
+    color: var(--navy);
+}
+
+
+/* =========================
+   6. INTRODUCTION
+========================= */
+
+.introduction {
+    padding: 90px 10%;
+    text-align: center;
+}
+
+.introduction h2,
+.section-heading h2,
+.why-us h2,
+.call-to-action h2 {
+    color: var(--navy);
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.introduction > p:last-child {
+    max-width: 700px;
+    margin: auto;
+    color: #687587;
+}
+
+
+/* =========================
+   7. SERVICES
+========================= */
+
+.services-preview {
+    background: var(--light);
+    padding: 85px 7%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading > p:last-child {
+    color: #687587;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.service-card {
+    background: white;
+    padding-bottom: 28px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.service-card h3 {
+    color: var(--navy);
+    font-size: 21px;
+    margin: 22px 22px 12px;
+}
+
+.service-card p {
+    color: #687587;
+    font-size: 14px;
+    margin: 0 22px 20px;
+}
+
+.service-card a {
+    color: #9a771e;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 22px;
+}
+
+
+/* =========================
+   8. WHY CHOOSE US
+========================= */
+
+.why-us {
+    padding: 90px 7%;
+    text-align: center;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    max-width: 1100px;
+    margin: 45px auto 0;
+}
+
+.benefits-grid article {
+    padding: 25px;
+    border-top: 3px solid var(--gold);
+}
+
+.benefits-grid h3 {
+    color: var(--navy);
+    margin-bottom: 12px;
+}
+
+.benefits-grid p {
+    color: #687587;
+    font-size: 14px;
+}
+
+
+/* =========================
+   9. CALL TO ACTION
+========================= */
+
+.call-to-action {
+    background: var(--navy);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.call-to-action h2 {
+    color: white;
+}
+
+.call-to-action p {
+    color: #d5dce5;
+    margin-bottom: 28px;
+}
+
+
+/* =========================
+   10. FOOTER
+========================= */
+
+.footer {
+    background: #031426;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.footer p {
+    color: #c0c8d2;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.copyright {
+    font-size: 12px !important;
+}
+
+
+/* =========================
+   11. MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 768px) {
+
+    .header {
+        padding: 18px 5%;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--navy);
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+        gap: 22px;
+        z-index: 10;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero {
+        min-height: 500px;
+        padding: 65px 7%;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .introduction,
+    .services-preview,
+    .why-us {
+        padding: 65px 6%;
+    }
+
+    .introduction h2,
+    .section-heading h2,
+    .why-us h2,
+    .call-to-action h2 {
+        font-size: 29px;
+    }
+
+    .service-grid,
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card img {
+        height: 240px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-buttons .button {
+        text-align: center;
+    }
+}
+
+
+/* =========================
+   12. INNER PAGE BANNERS
+========================= */
+
+.page-banner {
+    background: var(--navy);
+    color: white;
+    text-align: center;
+    padding: 85px 20px;
+}
+
+.page-banner h1 {
+    font-size: clamp(36px, 5vw, 52px);
+    margin-bottom: 15px;
+}
+
+.page-banner > p:last-child {
+    color: #d5dce5;
+}
+
+.page-section {
+    padding: 80px 7%;
+}
+
+.page-section h2 {
+    color: var(--navy);
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+.page-section p {
+    color: #687587;
+}
+
+.about-layout,
+.founder-section,
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-layout img,
+.founder-section img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+}
+
+.about-layout p,
+.founder-section p {
+    margin-bottom: 18px;
+}
+
+.values-section {
+    background: var(--light);
+    text-align: center;
+}
+
+.founder-section h3 {
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.portfolio-card {
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+.portfolio-card img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+}
+
+.portfolio-card div {
+    padding: 22px;
+}
+
+.portfolio-card h3 {
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+.portfolio-note {
+    max-width: 850px;
+    margin: 35px auto 0;
+    font-size: 13px;
+    text-align: center;
+}
+
+.contact-layout {
+    align-items: start;
+}
+
+.contact-information {
+    margin-top: 35px;
+}
+
+.contact-information h3 {
+    color: var(--navy);
+    margin: 20px 0 5px;
+}
+
+.contact-form-area {
+    background: var(--light);
+    padding: 30px;
+}
+
+.contact-form-area h2 {
+    font-size: 27px;
+}
+
+.contact-form-area form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form-area label {
+    font-weight: bold;
+    color: var(--navy);
+    font-size: 14px;
+}
+
+.contact-form-area input,
+.contact-form-area select,
+.contact-form-area textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d5dce5;
+    background: white;
+    font: inherit;
+    border-radius: 3px;
+    margin-bottom: 12px;
+}
+
+.contact-form-area textarea {
+    resize: vertical;
+}
+
+.contact-form-area button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.form-note {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+
+/* =========================
+   13. INNER PAGE MOBILE
+========================= */
+
+@media (max-width: 768px) {
+    .page-banner {
+        padding: 65px 20px;
+    }
+
+    .page-section {
+        padding: 60px 6%;
+    }
+
+    .about-layout,
+    .founder-section,
+    .contact-layout,
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .founder-section img {
+        order: 1;
+    }
+
+    .contact-form-area {
+        padding: 22px;
+    }
+
+    .portfolio-card img {
+        height: 230px;
+    }
+}
+
+/* =================================
+   14. IMAGE DISPLAY — NO CROPPING
+================================= */
+
+/* General image protection */
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Homepage hero background */
+
+.hero {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--navy);
+}
+
+/* Homepage service images */
+
+.service-card img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: contain;
+    background: #f4f6f8;
+}
+
+/* About page images */
+
+.about-layout img {
+    display: block;
+    width: 100%;
+    height: 380px;
+    object-fit: contain;
+    background: #f4f6f8;
+}
+
+/* Founder image */
+
+.founder-section img {
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: contain;
+    background: #f4f6f8;
+}
+
+/* Portfolio images */
+
+.portfolio-card img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    background: #f4f6f8;
+}
+
+/* Mobile image dimensions */
+
+@media (max-width: 768px) {
+
+    .service-card img {
+        height: 240px;
+    }
+
+    .about-layout img {
+        height: 300px;
+    }
+
+    .founder-section img {
+        height: 340px;
+    }
+
+    .portfolio-card img {
+        height: 250px;
+    }
+
+}
+
+
+/* =========================================
+   IMAGE FRAMES — JM STAFFING BRAND STYLE
+   ========================================= */
+
+img {
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(6, 31, 58, 0.16);
+    background-color: #ffffff;
+    box-sizing: border-box;
+    transition: box-shadow 0.25s ease;
+}
+
+/* Service images */
+.service-card img {
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(6, 31, 58, 0.18);
+}
+
+/* About and founder images */
+.about-layout img,
+.founder-section img {
+    border: 2px solid var(--gold);
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(6, 31, 58, 0.18);
+}
+
+/* Portfolio images */
+.portfolio-card img {
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(6, 31, 58, 0.18);
+}
+
+/* Subtle effect when a viewer points at an image */
+img:hover {
+    box-shadow: 0 7px 20px rgba(6, 31, 58, 0.24);
+}
+
+@media (max-width: 768px) {
+    img {
+        border-radius: 10px;
+    }
+}
+

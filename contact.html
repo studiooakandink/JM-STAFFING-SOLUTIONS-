@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | JM Staffing Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+    <nav class="navbar">
+        <a href="index.html" class="logo">JM <span>STAFFING</span></a>
+        <button class="menu-button" aria-label="Open navigation">☰</button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="page-banner">
+        <p class="section-label">LET'S TALK</p>
+        <h1>Contact JM Staffing</h1>
+        <p>Tell us about your upcoming event.</p>
+    </section>
+
+    <section class="page-section contact-layout">
+
+        <div>
+            <p class="section-label">MAKE AN ENQUIRY</p>
+            <h2>Let's Plan Something Great.</h2>
+            <p>
+                Whether you are planning a wedding, corporate
+                function or private celebration, tell us what
+                kind of hospitality support you need.
+            </p>
+
+            <div class="contact-information">
+                <h3>Our Service Area</h3>
+                <p>Cape Town, South Africa</p>
+
+                <h3>Our Services</h3>
+                <p>Barmen, event hostesses and experienced waiters.</p>
+            </div>
+        </div>
+
+        <div class="contact-form-area">
+            <h2>Event Enquiry</h2>
+
+            <form>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name"
+                       placeholder="Your full name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email"
+                       placeholder="Your email address" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone"
+                       placeholder="Your contact number">
+
+                <label for="event">Event Type</label>
+                <select id="event" name="event" required>
+                    <option value="">Select event type</option>
+                    <option>Wedding</option>
+                    <option>Corporate Event</option>
+                    <option>Private Function</option>
+                    <option>Other</option>
+                </select>
+
+                <label for="date">Event Date</label>
+                <input type="date" id="date" name="date">
+
+                <label for="guests">Estimated Number of Guests</label>
+                <input type="number" id="guests" name="guests"
+                       min="1" placeholder="Number of guests">
+
+                <label for="message">Tell Us About Your Event</label>
+                <textarea id="message" name="message" rows="5"
+                          placeholder="Describe your event and staffing requirements"></textarea>
+
+                <button type="button" class="button button-gold" disabled>
+                    Enquiry Form Coming Soon
+                </button>
+
+                <p class="form-note">
+                    This form is not connected to an enquiry system yet.
+                    Contact details and submission functionality will
+                    be added after confirmation.
+                </p>
+            </form>
+        </div>
+
+    </section>
+</main>
+
+<footer class="footer">
+    <a href="index.html" class="logo">JM <span>STAFFING</span></a>
+    <p>Professional Hospitality Staffing | Cape Town</p>
+    <p class="copyright">
+        &copy; <span id="current-year"></span> JM Staffing Solutions.
+        All rights reserved.
+    </p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

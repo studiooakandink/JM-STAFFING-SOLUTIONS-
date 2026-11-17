@@ -1,0 +1,9 @@
+.env
+.env.*
+!.env.example
+node_modules/
+.convex/
+*.log
+.DS_Store
+*.before-convex
+*.before-animation
