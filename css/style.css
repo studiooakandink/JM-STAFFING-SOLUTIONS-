@@ -862,3 +862,317 @@ button:focus-visible {
     }
 }
 
+
+/* =========================================
+   CONTACT FORM SUBMISSION FEEDBACK
+========================================= */
+
+.form-status {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: fit-content;
+    max-width: 100%;
+    padding: 13px 17px;
+    margin-top: 18px;
+    border: 1px solid #d9e0e8;
+    border-radius: 10px;
+    background: #f5f7fa;
+    color: var(--navy);
+    font-size: 14px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    animation: status-appear 0.35s ease both;
+}
+
+.form-status::before {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 25px;
+    height: 25px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.form-status.is-loading::before {
+    content: "";
+    width: 19px;
+    height: 19px;
+    border: 3px solid #d4dce5;
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: form-spinner 0.8s linear infinite;
+}
+
+.form-status.is-success {
+    background: #edf7f0;
+    border-color: #a8d5b5;
+    color: #174d2b;
+}
+
+.form-status.is-success::before {
+    content: "✓";
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #247a43;
+    color: #ffffff;
+    animation: success-pop 0.45s ease both;
+}
+
+.form-status.is-error {
+    background: #fff3f0;
+    border-color: #e7b5aa;
+    color: #762d20;
+}
+
+.form-status.is-error::before {
+    content: "!";
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #a83d2b;
+    color: #ffffff;
+}
+
+button.is-submitting {
+    opacity: 0.75;
+    cursor: wait;
+}
+
+@keyframes form-spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes status-appear {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes success-pop {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .form-status,
+    .form-status::before {
+        animation: none !important;
+    }
+}
+
+/* =========================================
+   FULL SCREEN ENQUIRY SUCCESS ANIMATION
+========================================= */
+
+body.submission-open {
+    overflow: hidden;
+}
+
+.submission-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    background: rgba(3, 20, 38, 0.97);
+    backdrop-filter: blur(12px);
+    animation: submission-fade-in 0.45s ease both;
+}
+
+.submission-success {
+    width: 100%;
+    max-width: 520px;
+    padding: 35px 25px;
+    text-align: center;
+    color: #ffffff;
+    animation: submission-content-in 0.65s ease both;
+}
+
+.success-icon {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 28px;
+}
+
+.success-icon svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.success-circle {
+    fill: none;
+    stroke: #c9a43b;
+    stroke-width: 3;
+    stroke-dasharray: 280;
+    stroke-dashoffset: 280;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    animation: draw-success-circle 0.9s ease forwards;
+}
+
+.success-check {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 70;
+    stroke-dashoffset: 70;
+    animation: draw-success-check 0.55s ease 0.85s forwards;
+}
+
+.success-label {
+    color: #d5b65b;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 17px;
+}
+
+.submission-success h1 {
+    color: #ffffff;
+    font-size: clamp(27px, 6vw, 42px);
+    line-height: 1.2;
+    margin: 0 0 20px;
+    letter-spacing: 1px;
+    animation: submission-text-in 0.7s ease 0.4s both;
+}
+
+.success-message {
+    max-width: 410px;
+    margin: 0 auto 15px;
+    color: #e1e8ef;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.success-reference {
+    color: #d5b65b;
+    font-size: 14px;
+    margin: 15px 0 30px;
+}
+
+.success-continue {
+    display: inline-block;
+    min-width: 190px;
+    padding: 16px 30px;
+    border: 2px solid #c9a43b;
+    border-radius: 6px;
+    background: #c9a43b;
+    color: #061f3a;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.success-continue:hover {
+    background: transparent;
+    color: #ffffff;
+}
+
+.success-footer {
+    margin-top: 35px;
+    color: #91a1b2;
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+.submission-closing {
+    animation: submission-fade-out 0.25s ease forwards;
+}
+
+@keyframes submission-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes submission-content-in {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes draw-success-circle {
+    to { stroke-dashoffset: 0; }
+}
+
+@keyframes draw-success-check {
+    to { stroke-dashoffset: 0; }
+}
+
+@keyframes submission-text-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes submission-fade-out {
+    to { opacity: 0; }
+}
+
+@media (max-width: 480px) {
+    .success-icon {
+        width: 125px;
+        height: 125px;
+    }
+
+    .submission-success {
+        padding: 25px 12px;
+    }
+
+    .success-message {
+        font-size: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .submission-overlay,
+    .submission-success,
+    .success-circle,
+    .success-check,
+    .submission-success h1 {
+        animation: none !important;
+    }
+
+    .success-circle,
+    .success-check {
+        stroke-dashoffset: 0;
+    }
+}

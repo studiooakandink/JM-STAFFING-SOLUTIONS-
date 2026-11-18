@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | JM Staffing Solutions</title>
     <link rel="stylesheet" href="css/style.css">
+
+    <script type="importmap">
+    {
+        "imports": {
+            "convex/browser": "https://esm.sh/convex@1.50.0/browser",
+            "convex/server": "https://esm.sh/convex@1.50.0/server"
+        }
+    }
+    </script>
+
 </head>
 <body>
 
@@ -52,7 +62,7 @@
         <div class="contact-form-area">
             <h2>Event Enquiry</h2>
 
-            <form>
+            <form id="event-enquiry-form">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name"
                        placeholder="Your full name" required>
@@ -85,14 +95,12 @@
                 <textarea id="message" name="message" rows="5"
                           placeholder="Describe your event and staffing requirements"></textarea>
 
-                <button type="button" class="button button-gold" disabled>
-                    Enquiry Form Coming Soon
+                <button type="submit" class="button button-gold">
+                    Submit Enquiry
                 </button>
 
-                <p class="form-note">
-                    This form is not connected to an enquiry system yet.
-                    Contact details and submission functionality will
-                    be added after confirmation.
+                <p class="form-note" id="form-status" role="status" aria-live="polite">
+                    Complete the form and select Submit Enquiry.
                 </p>
             </form>
         </div>
@@ -109,6 +117,7 @@
     </p>
 </footer>
 
+<script type="module" src="js/contact.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
