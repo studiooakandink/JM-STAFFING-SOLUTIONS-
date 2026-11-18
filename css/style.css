@@ -743,3 +743,122 @@ img:hover {
     }
 }
 
+
+/* =========================================
+   JM STAFFING — MODERN DESIGN UPGRADE
+   ========================================= */
+
+/* Smooth page movement */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header refinement */
+header {
+    border-bottom: 2px solid var(--gold);
+    box-shadow: 0 4px 16px rgba(6, 31, 58, 0.10);
+}
+
+/* Navigation links */
+.nav-links a {
+    transition: color 0.25s ease, background 0.25s ease;
+    border-radius: 6px;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+    color: var(--gold);
+}
+
+/* Buttons */
+.btn,
+button {
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+}
+
+.btn:hover,
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(6, 31, 58, 0.18);
+}
+
+/* Service and portfolio cards */
+.service-card,
+.portfolio-card,
+.benefit-card {
+    border: 1px solid rgba(201, 164, 59, 0.35);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(6, 31, 58, 0.08);
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.service-card:hover,
+.portfolio-card:hover,
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 26px rgba(6, 31, 58, 0.14);
+}
+
+/* Better keyboard accessibility */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+}
+
+/* Custom back-to-top button */
+.back-to-top {
+    position: fixed;
+    right: 22px;
+    bottom: 24px;
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    background: var(--navy);
+    color: #ffffff;
+    font-size: 27px;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 5px 18px rgba(6, 31, 58, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity 0.25s ease,
+                visibility 0.25s ease,
+                transform 0.25s ease,
+                background 0.25s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        right: 16px;
+        bottom: 18px;
+        width: 46px;
+        height: 46px;
+        font-size: 25px;
+    }
+}
+
